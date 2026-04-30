@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Veterinaria</title>
+</head>
+<body>
+
+<h3>Agendar Cita</h3>
+
+<input id="nombre_mascota" placeholder="Nombre mascota">
+<input id="hora" placeholder="Hora">
+
+<button id="btn-guardar" onclick="guardar()">Guardar</button>
+
+<hr>
+
+<h3>Validar Mascota</h3>
+
+<input id="cedula_propietario" placeholder="Cédula">
+<input id="id_mascota" placeholder="ID Mascota">
+
+<button id="btn-validar" onclick="validarMascota()">Validar</button>
+
+<hr>
+
+<h3>Seguridad</h3>
+
+<button id="btn-acceso" onclick="accesoNoAutorizado()">Probar acceso no autorizado</button>
+
+<hr>
+
+<div id="mensaje"></div>
+
+<script>
+function guardar() {
+    let nombre = document.getElementById("nombre_mascota").value;
+    let hora = document.getElementById("hora").value;
+
+    if (nombre === "") {
+        document.getElementById("mensaje").innerText = "Este campo es obligatorio";
+    } else if (hora === "10:30") {
+        document.getElementById("mensaje").innerText = "Horario no disponible";
+    } else {
+        document.getElementById("mensaje").innerText = "Cita creada exitosamente";
+    }
+}
+
+function validarMascota() {
+    let mascota = document.getElementById("id_mascota").value;
+
+    if (mascota === "99999") {
+        document.getElementById("mensaje").innerText =
+            "La mascota no está asociada al propietario";
+    } else {
+        document.getElementById("mensaje").innerText =
+            "Validación correcta";
+    }
+}
+
+function accesoNoAutorizado() {
+    document.getElementById("mensaje").innerText = "Acceso denegado";
+}
+</script>
+
+</body>
+</html>
