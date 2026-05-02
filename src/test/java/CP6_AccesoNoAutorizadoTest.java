@@ -25,7 +25,6 @@ public class CP6_AccesoNoAutorizadoTest {
     @DisplayName("CP6: Acceso no autorizado a citas ajenas")
     void testAccesoSeguridad() {
 
-        // Clic correcto al botón de seguridad
         driver.findElement(By.id("btn-acceso")).click();
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
