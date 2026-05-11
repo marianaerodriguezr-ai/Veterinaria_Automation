@@ -92,4 +92,3 @@ El uso de Selenium y JUnit facilitó la detección de errores, mejoró la repeti
 ## 👩‍💻 Autor
 
 Mariana Rodríguez
-William Peralta
